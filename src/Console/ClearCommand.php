@@ -1,4 +1,4 @@
-<?php  namespace DavinBao\LaravelXunSearch\Console;
+<?php  namespace Sdfsky\TipaskXunSearch\Console;
 
 use App;
 use Illuminate\Console\Command;

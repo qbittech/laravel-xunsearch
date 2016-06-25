@@ -1,4 +1,4 @@
-<?php namespace DavinBao\LaravelXunSearch\Model;
+<?php namespace Sdfsky\TipaskXunSearch\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -170,17 +170,9 @@ class Config
     {
         $fields = [];
         $c = $this->config($model);
-
         foreach ($c['fields'] as $key => $value) {
-            $fieldType = self::FIELD_TYPE_STRING;
-            $field = $value;
-
-            if (is_array($value)) {
-                $fieldType = array_get($value, 'type', self::FIELD_TYPE_STRING);
-                $field = $key;
-            }
-
-            $fields[$field] = ['type' => $fieldType];
+            $value['type'] = array_get($value, 'type', self::FIELD_TYPE_STRING);
+            $fields[$key] = $value;
         }
 
         return $fields;
@@ -197,7 +189,7 @@ class Config
                 return strtotime($field['value']);
             case self::FIELD_TYPE_STRING:
             default:
-                return $field['value'];
+                return strip_tags($field['value']);
         }
     }
 

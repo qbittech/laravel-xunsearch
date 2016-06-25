@@ -1,4 +1,4 @@
-<?php namespace DavinBao\LaravelXunSearch\XunSearch;
+<?php namespace Sdfsky\Tipask\XunSearch\XunSearch;
 
 use App;
 

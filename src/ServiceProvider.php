@@ -1,6 +1,6 @@
-<?php namespace DavinBao\LaravelXunSearch;
+<?php namespace Sdfsky\TipaskXunSearch;
 
-use DavinBao\LaravelXunSearch\Model\Config as ModelsConfig;
+use Sdfsky\TipaskXunSearch\Model\Config as ModelsConfig;
 use Config;
 
 class ServiceProvider extends \Illuminate\Support\ServiceProvider
@@ -13,38 +13,40 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
     protected $defer = false;
     public function boot()
     {
-        $this->mergeConfigFrom(__DIR__.'/config/config.php', config_path('laravel-xun-search'));
+        $this->mergeConfigFrom(__DIR__.'/config/config.php', config_path('xunsearch'));
     }
-
     public function register()
     {
+
         $this->publishes([
-            __DIR__.'/config/config.php' => config_path('laravel-xun-search.php'),
+            __DIR__ . '/config/xunsearch.php' => config_path('xunsearch.php'),
         ]);
 
-        $this->app->bindShared('laravel-xun-search.project', function () {
-            return Config::get('laravel-xun-search.project');
+        $this->app->singleton('xunsearch.project', function () {
+            return Config::get('xunsearch.project');
         });
 
-        $this->app->bindShared('search', function ($app) {
-            return new Search(
-                $app['laravel-xun-search.project'],
-                $app['laravel-xun-search.models.config']
-            );
-        });
-
-        $this->app->bindShared('laravel-xun-search.models.config', function ($app) {
+        $this->app->singleton('xunsearch.models.config', function ($app) {
             return new ModelsConfig(
-                Config::get('laravel-xun-search.index.models'),
-                $app->make('DavinBao\LaravelXunSearch\Model\Factory')
+                Config::get('xunsearch.index.models'),
+                $app->make('Tipask\XunSearch\Model\Factory')
             );
         });
 
-        $this->app->bindShared('command.search.rebuild', function () {
+
+        $this->app->singleton('search', function ($app) {
+            return new Search(
+                $app['xunsearch.project'],
+                $app['xunsearch.models.config']
+            );
+        });
+
+
+        $this->app->singleton('command.search.rebuild', function () {
             return new Console\RebuildCommand;
         });
 
-        $this->app->bindShared('command.search.clear', function () {
+        $this->app->singleton('command.search.clear', function () {
             return new Console\ClearCommand;
         });
 

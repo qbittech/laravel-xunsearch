@@ -1,16 +1,16 @@
-<?php namespace DavinBao\LaravelXunSearch;
+<?php namespace Sdfsky\TipaskXunSearch;
 
 use App;
 use Illuminate\Database\Eloquent\Model;
-use DavinBao\LaravelXunSearch\Model\Config as ModelsConfig;
-use DavinBao\LaravelXunSearch\XunSearch\Xs as XunSearch;
+use Sdfsky\TipaskXunSearch\Model\Config as ModelsConfig;
+use Sdfsky\TipaskXunSearch\Xs as XunSearch;
 
 /**
  * Class Search
  * Main search class
  *
  * @author davin.bao
- * @package DavinBao\LaravelXunSearch
+ * @package Tipask\XunSearch
  */
 class Search
 {
@@ -50,7 +50,7 @@ class Search
     private $config;
 
     /**
-     * @return \DavinBao\LaravelXunSearch\Model\Config
+     * @return \Tipask\XunSearch\Model\Config
      */
     public function config()
     {
@@ -120,6 +120,7 @@ class Search
         // Get base fields.
         $fields = $this->config->fields($model);
 
+
         // Add fields to document to be indexed (but not stored).
         foreach ($fields as $fieldName => $options) {
             //获取数据库中的值
@@ -127,7 +128,7 @@ class Search
             //获取需要索引的数据值
             $value = $this->config()->getSearchFieldValue($options);
             // Get base fields.
-            $doc->setField($fieldName, $value);
+            $doc->setField($options['search_field'], $value);
         }
 
         $this->index()->add($doc);

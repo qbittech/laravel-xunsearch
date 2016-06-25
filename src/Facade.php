@@ -1,4 +1,4 @@
-<?php namespace DavinBao\LaravelXunSearch;
+<?php namespace Sdfsky\TipaskXunSearch;
 
 class Facade extends \Illuminate\Support\Facades\Facade
 {

@@ -1,9 +1,9 @@
-<?php namespace DavinBao\LaravelXunSearch\Console;
+<?php namespace Sdfsky\Tipask\XunSearch\Console;
 
 use App;
 use Config;
 use Illuminate\Console\Command;
-use DavinBao\LaravelXunSearch\Search;
+use Sdfsky\TipaskXunSearch\Search;
 use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Output\NullOutput;
 
@@ -28,13 +28,13 @@ class RebuildCommand extends Command
 
         /** @var Search $search */
         $search = App::make('search');
-      dd(App\Models\User::getSearch()->addQuery("admin")->count());
+      //dd(App\Models\User::getSearch()->addQuery("admin")->count());
         // 结束上次可能出现异常的重建索引
         $search->index()->stopRebuild();
         // 宣布开始重建索引
         $search->index()->beginRebuild();
 
-        $modelRepositories = Config::get('laravel-xun-search.index.models');
+        $modelRepositories = Config::get('xunsearch.index.models');
         if (count($modelRepositories) > 0) {
             foreach ($modelRepositories as $modelName=>$value) {
                 if(!class_exists($modelName)){

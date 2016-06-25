@@ -1,4 +1,4 @@
-<?php namespace DavinBao\LaravelXunSearch\Model;
+<?php namespace Sdfsky\TipaskXunSearch\Model;
 
 use App;
 
@@ -21,7 +21,7 @@ class Factory
 
         if (!is_subclass_of($className, $baseClass)) {
             throw new \InvalidArgumentException(
-                "The class '{$className}' must be inherited from '{$baseClass}'."
+                "The class '{$className}' must be inherited from dd '{$baseClass}'."
             );
         }
 
