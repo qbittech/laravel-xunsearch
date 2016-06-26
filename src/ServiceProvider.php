@@ -13,7 +13,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
     protected $defer = false;
     public function boot()
     {
-        $this->mergeConfigFrom(__DIR__.'/config/config.php', config_path('xunsearch'));
+        $this->mergeConfigFrom(__DIR__.'/config/xunsearch.php', config_path('xunsearch'));
     }
     public function register()
     {
@@ -29,7 +29,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
         $this->app->singleton('xunsearch.models.config', function ($app) {
             return new ModelsConfig(
                 Config::get('xunsearch.index.models'),
-                $app->make('Tipask\XunSearch\Model\Factory')
+                $app->make('Sdfsky\TipaskXunSearch\Model\Factory')
             );
         });
 

@@ -1,4 +1,4 @@
-<?php namespace Sdfsky\Tipask\XunSearch\Console;
+<?php namespace Sdfsky\TipaskXunSearch\Console;
 
 use App;
 use Config;

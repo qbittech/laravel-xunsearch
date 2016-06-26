@@ -3,14 +3,14 @@
 use App;
 use Illuminate\Database\Eloquent\Model;
 use Sdfsky\TipaskXunSearch\Model\Config as ModelsConfig;
-use Sdfsky\TipaskXunSearch\Xs as XunSearch;
+use Sdfsky\TipaskXunSearch\XunSearch\Xs as XunSearch;
 
 /**
  * Class Search
  * Main search class
  *
- * @author davin.bao
- * @package Tipask\XunSearch
+ * @author sdfsky
+ * @package Sdfsky\TipaskXunSearch
  */
 class Search
 {
@@ -50,7 +50,7 @@ class Search
     private $config;
 
     /**
-     * @return \Tipask\XunSearch\Model\Config
+     * @return \Sdfsky\TipaskXunSearch\Model\Config
      */
     public function config()
     {

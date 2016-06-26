@@ -15,7 +15,7 @@ Require this package in your composer.json and run composer update:
 ```json
 {
 	"require": {
-        "davin-bao/laravel-xun-search": "dev-master"
+        "sdfsky/tipask-xunsearch": "dev-master"
 	}
 }
 ```
@@ -24,7 +24,7 @@ After updating composer, add the ServiceProvider to the providers array in `app/
 
 ```php
 'providers' => [
-	DavinBao\LaravelXunSearch\ServiceProvider::class,
+	Sdfsky\TipaskXunSearch\ServiceProvider::class,
 ],
 ```
 
@@ -32,7 +32,7 @@ If you want to use the facade to search, add this to your facades in `app/config
 
 ```php
 'aliases' => [
-	'Search' => DavinBao\LaravelXunSearch\Facade::class,
+	'Search' => Sdfsky\TipaskXunSearch\Facade::class,
 ],
 ```
 ## Configuration 
@@ -40,7 +40,7 @@ If you want to use the facade to search, add this to your facades in `app/config
 Publish the config file into your project by running:
 
 ```bash
-php artisan vendor:publish --provider="DavinBao\LaravelXunSearch\ServiceProvider"
+php artisan vendor:publish --provider="Sdfsky\TipaskXunSearch\ServiceProvider"
 ```
 ###Basic
 In published config file add descriptions for models which need to be indexed, for example:
@@ -49,7 +49,7 @@ In published config file add descriptions for models which need to be indexed, f
 
 //@see http://www.xunsearch.com/doc/php/guide/ini.guide
 "project" => [
-    "project.name" => "demo",
+    "project.name" => "tipask",
     "project.default_charset" => "utf-8",
     "server.index" => "127.0.0.1:8383",
     "server.search" => "127.0.0.1:8384",
@@ -65,24 +65,15 @@ In published config file add descriptions for models which need to be indexed, f
     "id" => [
         "type" => "numeric"
     ],
-    "username" => [
+    "subject" => [
         "type" => "title"
     ],
-    "email" => [
-        "index" => "both"
+    "status" => [
+        'type' => "numeric"
     ],
-    "last_seen" => [
-        "type" => "numeric"
-    ],
-    "role" => [
-        "index" => "both"
-    ],
-    "uri" => [
-        "index" => "both"
-    ],
-    "action" => [
-        "index" => "both"
-    ],
+    "content" => [
+        "type" => "body"
+    ]
 ],
 
 'index' => [

@@ -1,4 +1,4 @@
-<?php namespace Sdfsky\Tipask\XunSearch\XunSearch;
+<?php namespace Sdfsky\TipaskXunSearch\XunSearch;
 
 /**
  * Class Xs
