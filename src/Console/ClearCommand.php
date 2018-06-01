@@ -15,7 +15,7 @@ class ClearCommand extends Command
     protected $name = 'search:clear';
     protected $description = 'Clear the search index storage';
 
-    public function fire()
+    public function handle()
     {
         if (!$this->option('verbose')) {
             $this->output = new NullOutput;
