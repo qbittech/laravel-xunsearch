@@ -1,6 +1,6 @@
-<?php namespace Sdfsky\TipaskXunSearch;
+<?php namespace Qbittech\LaravelXunSearch;
 
-use Sdfsky\TipaskXunSearch\Model\Config as ModelsConfig;
+use Qbittech\LaravelXunSearch\Model\Config as ModelsConfig;
 use Config;
 
 class ServiceProvider extends \Illuminate\Support\ServiceProvider
@@ -29,7 +29,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
         $this->app->singleton('xunsearch.models.config', function ($app) {
             return new ModelsConfig(
                 Config::get('xunsearch.index.models'),
-                $app->make('Sdfsky\TipaskXunSearch\Model\Factory')
+                $app->make('Qbittech\LaravelXunSearch\Model\Factory')
             );
         });
 
