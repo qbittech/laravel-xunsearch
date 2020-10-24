@@ -3,7 +3,7 @@
 return [
     //@see http://www.xunsearch.com/doc/php/guide/ini.guide
     "project" => [
-        "project.name" => "tipask",
+        "project.name" => "search",
         "project.default_charset" => "utf-8",
         "server.index" => "127.0.0.1:8383",
         "server.search" => "127.0.0.1:8384",
@@ -48,20 +48,6 @@ return [
      */
     'index' => [
         'models' => [
-            \App\Models\Question::class => [
-                'fields' => [
-                    'title' => [
-                        'search_field' => 'subject',
-                    ],
-                    'description' => [
-                        'search_field' => 'content',
-                    ],
-                    'status' => [
-                        'search_field' => 'status',
-                    ],
-                ],
-                'primary_key' => 'id'
-            ],
             \App\Models\Article::class => [
                 'fields' => [
                     'title' => [
