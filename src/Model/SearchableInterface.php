@@ -4,7 +4,7 @@
  * Interface Searchable
  *
  * @author davin.bao
- * @package DavinBao\LaravelXunSearch\Model
+ * @package Qbittech\LaravelXunSearch\Model
  */
 interface SearchableInterface
 {
