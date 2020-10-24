@@ -1,4 +1,4 @@
-<?php namespace Sdfsky\TipaskXunSearch\Model;
+<?php namespace Qbittech\LaravelXunSearch\Model;
 
 use App;
 
@@ -6,7 +6,7 @@ use App;
  * Class Factory
  *
  * @author davin.bao
- * @package DavinBao\LaravelXunSearch\Model
+ * @package Qbittech\LaravelXunSearch\Model
  */
 class Factory
 {
