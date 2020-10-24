@@ -1,4 +1,4 @@
-Laravel 5.1 XunSearch
+Laravel 5.1+ XunSearch
 ==============
 
 [![Latest Stable Version](https://poser.pugx.org/davin-bao/laravel-xun-search/v/stable.png)](https://packagist.org/packages/davin-bao/laravel-xun-search)
@@ -6,7 +6,7 @@ Laravel 5.1 XunSearch
 [![License](https://poser.pugx.org/davin-bao/laravel-xun-search/license.png)](https://packagist.org/packages/davin-bao/laravel-xun-search)
 [![Total Downloads](https://poser.pugx.org/davin-bao/laravel-xun-search/downloads)](https://packagist.org/packages/davin-bao/laravel-xun-search)
 
-Laravel 5.1 package for full-text search over Eloquent models based on XunSearch.
+Laravel 5.1+ package for full-text search over Eloquent models based on XunSearch.
 
 ## Installation
 
@@ -15,7 +15,7 @@ Require this package in your composer.json and run composer update:
 ```json
 {
 	"require": {
-        "sdfsky/tipask-xunsearch": "dev-master"
+        "qbittech/laravel-xunsearch": "dev-master"
 	}
 }
 ```
@@ -24,7 +24,7 @@ After updating composer, add the ServiceProvider to the providers array in `app/
 
 ```php
 'providers' => [
-	Sdfsky\TipaskXunSearch\ServiceProvider::class,
+	Qbittech\LaravelXunSearch\ServiceProvider::class,
 ],
 ```
 
@@ -32,7 +32,7 @@ If you want to use the facade to search, add this to your facades in `app/config
 
 ```php
 'aliases' => [
-	'Search' => Sdfsky\TipaskXunSearch\Facade::class,
+	'Search' => Qbittech\LaravelXunSearch\Facade::class,
 ],
 ```
 ## Configuration 
@@ -40,7 +40,7 @@ If you want to use the facade to search, add this to your facades in `app/config
 Publish the config file into your project by running:
 
 ```bash
-php artisan vendor:publish --provider="Sdfsky\TipaskXunSearch\ServiceProvider"
+php artisan vendor:publish --provider="Qbittech\LaravelXunSearch\ServiceProvider"
 ```
 ###Basic
 In published config file add descriptions for models which need to be indexed, for example:
@@ -49,7 +49,7 @@ In published config file add descriptions for models which need to be indexed, f
 
 //@see http://www.xunsearch.com/doc/php/guide/ini.guide
 "project" => [
-    "project.name" => "tipask",
+    "project.name" => "search",
     "project.default_charset" => "utf-8",
     "server.index" => "127.0.0.1:8383",
     "server.search" => "127.0.0.1:8384",
@@ -120,7 +120,7 @@ For example:
 ```php
 
 use Illuminate\Database\Eloquent\Model;
-use DavinBao\LaravelXunSearch\Model\SearchableInterface;
+use Qbittech\LaravelXunSearch\Model\SearchableInterface;
 
 class Dummy extends Model implements SearchableInterface
 {
@@ -145,8 +145,8 @@ For register of necessary events (save/update/delete) `use DavinBao\LaravelXunSe
 ```php
 
     use Illuminate\Database\Eloquent\Model;
-    use DavinBao\LaravelXunSearch\Model\SearchableInterface;
-    use DavinBao\LaravelXunSearch\Model\SearchTrait;
+    use Qbittech\LaravelXunSearch\Model\SearchableInterface;
+    use Qbittech\LaravelXunSearch\Model\SearchTrait;
 
     class Dummy extends Model implements SearchableInterface
     {
