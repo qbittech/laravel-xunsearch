@@ -1,4 +1,4 @@
-<?php namespace Sdfsky\TipaskXunSearch\Model;
+<?php namespace Qbittech\LaravelXunSearch\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
  * Class Config
  *
  * @author davin.bao
- * @package DavinBao\LaravelXunSearch\Model
+ * @package Qbittech\LaravelXunSearch\Model
  */
 class Config
 {
@@ -38,7 +38,7 @@ class Config
     /**
      * Model factory.
      *
-     * @var \DavinBao\LaravelXunSearch\Model\Factory
+     * @var \Qbittech\LaravelXunSearch\Model\Factory
      */
     private $modelFactory;
 
