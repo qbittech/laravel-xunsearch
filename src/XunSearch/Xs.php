@@ -1,11 +1,11 @@
-<?php namespace Sdfsky\TipaskXunSearch\XunSearch;
+<?php namespace Qbittech\LaravelXunSearch\XunSearch;
 
 /**
  * Class Xs
  * Rewrite class XS
  *
  * @author davin.bao
- * @package DavinBao\LaravelXunSearch\XunSearch
+ * @package Qbittech\LaravelXunSearch\XunSearch
  */
 class Xs extends \XS
 {
