@@ -1,4 +1,4 @@
-<?php namespace DavinBao\LaravelXunSearch\Model;
+<?php namespace Qbittech\LaravelXunSearch\Model;
 
 use App;
 
@@ -6,7 +6,7 @@ use App;
  * Trait SearchTrait
  *
  * @author davin.bao
- * @package DavinBao\LaravelXunSearch\Model
+ * @package Qbittech\LaravelXunSearch\Model
  */
 trait SearchTrait
 {
