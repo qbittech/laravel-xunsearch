@@ -1,4 +1,4 @@
-<?php namespace Sdfsky\TipaskXunSearch\XunSearch;
+<?php namespace Qbittech\LaravelXunSearch\XunSearch;
 
 use App;
 
@@ -7,7 +7,7 @@ use App;
  * Rewrite class XSSearch
  *
  * @author davin.bao
- * @package DavinBao\LaravelXunSearch\XunSearch
+ * @package Qbittech\LaravelXunSearch\XunSearch
  */
 class XsSearch extends \XSSearch
 {
