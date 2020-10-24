@@ -1,4 +1,4 @@
-<?php namespace Sdfsky\TipaskXunSearch;
+<?php namespace Qbittech\LaravelXunSearch;
 
 class Facade extends \Illuminate\Support\Facades\Facade
 {
