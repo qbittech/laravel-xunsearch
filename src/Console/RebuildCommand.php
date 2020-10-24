@@ -1,9 +1,9 @@
-<?php namespace Sdfsky\TipaskXunSearch\Console;
+<?php namespace Qbittech\LaravelXunSearch\Console;
 
 use App;
 use Config;
 use Illuminate\Console\Command;
-use Sdfsky\TipaskXunSearch\Search;
+use Qbittech\LaravelXunSearch\Search;
 use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Output\NullOutput;
 
@@ -11,7 +11,7 @@ use Symfony\Component\Console\Output\NullOutput;
  * Class RebuildCommand
  * Rebuild search index
  * @author davin.bao
- * @package DavinBao\LaravelXunSearch\Console
+ * @package Qbittech\LaravelXunSearch\Console
  */
 class RebuildCommand extends Command
 {
