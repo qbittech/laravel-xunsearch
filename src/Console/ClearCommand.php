@@ -1,4 +1,4 @@
-<?php  namespace Sdfsky\TipaskXunSearch\Console;
+<?php  namespace Qbittech\LaravelXunSearch\Console;
 
 use App;
 use Illuminate\Console\Command;
@@ -8,7 +8,7 @@ use Symfony\Component\Console\Output\NullOutput;
  * Class ClearCommand
  * clear all search index
  * @author davin.bao
- * @package DavinBao\LaravelXunSearch\Console
+ * @package Qbittech\LaravelXunSearch\Console
  */
 class ClearCommand extends Command
 {
