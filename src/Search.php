@@ -1,16 +1,16 @@
-<?php namespace Sdfsky\TipaskXunSearch;
+<?php namespace Qbittech\LaravelXunSearch;
 
 use App;
 use Illuminate\Database\Eloquent\Model;
-use Sdfsky\TipaskXunSearch\Model\Config as ModelsConfig;
-use Sdfsky\TipaskXunSearch\XunSearch\Xs as XunSearch;
+use Qbittech\LaravelXunSearch\Model\Config as ModelsConfig;
+use Qbittech\LaravelXunSearch\XunSearch\Xs as XunSearch;
 
 /**
  * Class Search
  * Main search class
  *
  * @author sdfsky
- * @package Sdfsky\TipaskXunSearch
+ * @package Qbittech\LaravelXunSearch
  */
 class Search
 {
@@ -50,7 +50,7 @@ class Search
     private $config;
 
     /**
-     * @return \Sdfsky\TipaskXunSearch\Model\Config
+     * @return \Qbittech\LaravelXunSearch\Model\Config
      */
     public function config()
     {
