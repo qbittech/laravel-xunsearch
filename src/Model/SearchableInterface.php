@@ -1,4 +1,4 @@
-<?php namespace DavinBao\LaravelXunSearch\Model;
+<?php namespace Qbittech\LaravelXunSearch\Model;
 
 /**
  * Interface Searchable
